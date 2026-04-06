@@ -10,7 +10,7 @@
 ![License MIT](https://img.shields.io/github/license/AidanPark/openclaw-android)
 ![GitHub Stars](https://img.shields.io/github/stars/AidanPark/openclaw-android)
 
-Because Android deserves a shell.
+Because Android deserves a shell. 
 
 ## No Linux install required
 
