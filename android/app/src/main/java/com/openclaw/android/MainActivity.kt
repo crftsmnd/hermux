@@ -217,6 +217,8 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("ClickableViewAccessibility")
     private fun setupExtraKeys() {
+                // Quick shortcuts
+        findViewById
         // Key code buttons — send key event on touch, never steal focus
         val keyMap =
             mapOf(
