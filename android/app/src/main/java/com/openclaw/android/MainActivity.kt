@@ -217,8 +217,14 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("ClickableViewAccessibility")
     private fun setupExtraKeys() {
-                // Quick shortcuts
-        findViewById
+        
+        // Quick shortcuts
+          findViewById<Button>(R.id.btnGateway)?.setOnClickListener { sessionManager.activeSession?.write("hermes gateway\n") }
+        findViewById<Button>(R.id.btnNewSession)?.setOnClickListener { sessionManager.createSession() }
+        findViewById<Button>(R.id.btnClear)?.setOnClickListener { sessionManager.activeSession?.write("clear\n") }
+        findViewById<Button>(R.id.btnExit)?.setOnClickListener { sessionManager.activeSession?.write("exit\n") }
+Message AgentKiloX (Enter to send)
+
         // Key code buttons — send key event on touch, never steal focus
         val keyMap =
             mapOf(
