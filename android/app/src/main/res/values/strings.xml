@@ -1,1 +1,8 @@
-xml
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Hermux</string>
+    <string name="notification_channel_id">hermes_service</string>
+    <string name="notification_channel_name">Hermux Service</string>
+    <string name="notification_title">Hermes is running</string>
+    <string name="notification_text">Terminal session active</string>
+</resources>
