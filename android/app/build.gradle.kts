@@ -175,4 +175,4 @@ configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {
     filter {
         exclude("**/generated/**")
     }
-}
+}// Build trigger
