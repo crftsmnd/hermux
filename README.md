@@ -134,7 +134,7 @@ Once complete, the OpenClaw version is displayed along with instructions to run 
 As instructed in the installation output, run:
 
 ```bash
-openclaw onboard
+openclaw onboard 
 ```
 
 Follow the on-screen instructions to complete the initial setup.
