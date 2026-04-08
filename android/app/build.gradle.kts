@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.hermes.android"
+    namespace = "com.openclaw.android"
     compileSdk = 36
 
     dependenciesInfo {
