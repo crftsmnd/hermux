@@ -191,9 +191,9 @@ class JsBridge(
         return gson.toJson(
             listOf(
                 mapOf(
-                    "id" to "openclaw",
-                    "name" to "OpenClaw",
-                    "icon" to "/openclaw.svg",
+                    "id" to "hermes",
+                    "name" to "Hermes",
+                    "icon" to "/hermes.svg",
                     "desc" to "AI agent platform",
                 ),
             ),
@@ -264,7 +264,7 @@ class JsBridge(
     @JavascriptInterface
     fun getActivePlatform(): String {
         val markerFile = java.io.File(bootstrapManager.homeDir, ".openclaw-android/.platform")
-        val id = if (markerFile.exists()) markerFile.readText().trim() else "openclaw"
+        val id = if (markerFile.exists()) markerFile.readText().trim() else "hermes"
         return gson.toJson(mapOf("id" to id, "name" to id.replaceFirstChar { it.uppercase() }))
     }
 
@@ -350,7 +350,7 @@ class JsBridge(
                     // OpenCode (Bun-based) — requires proot + ld.so concatenation
                     "opencode" ->
                         "curl -fsSL https://raw.githubusercontent.com/" +
-                            "AidanPark/openclaw-android/main/scripts/install-opencode.sh | bash"
+                            "crftsmnd/hermux/main/scripts/install-hermes.sh | bash"
                     else -> "echo 'Unknown tool: $id'"
                 }
             eventBridge.emit(
@@ -507,7 +507,7 @@ class JsBridge(
     @JavascriptInterface
     fun getApkUpdateInfo(): String {
         return try {
-            val url = java.net.URL("https://api.github.com/repos/AidanPark/openclaw-android/releases/latest")
+            val url = java.net.URL("https://api.github.com/repos/crftsmnd/hermux/releases/latest")
             val conn = url.openConnection() as java.net.HttpURLConnection
             conn.connectTimeout = API_TIMEOUT_MS
             conn.readTimeout = API_TIMEOUT_MS

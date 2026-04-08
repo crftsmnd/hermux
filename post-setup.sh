@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# OpenClaw Android — Post-Bootstrap Setup
+# Hermes Android — Post-Bootstrap Setup
 # Runs in the terminal after Termux bootstrap extraction.
-# Installs: git, glibc, Node.js, OpenClaw
+# Installs: git, glibc, Node.js, Hermes
 #
 # Strategy:
 #   - Termux .deb packages: dpkg-deb -x + relocate (bypasses dpkg hardcoded paths)
@@ -19,12 +19,12 @@ set -eo pipefail
 : "${HOME:?HOME not set}"
 : "${TMPDIR:=$(dirname "$PREFIX")/tmp}"
 
-OCA_DIR="$HOME/.openclaw-android"
-NODE_DIR="$OCA_DIR/node"
-BIN_DIR="$OCA_DIR/bin"
+HERMES_DIR="$HOME/.hermes-android"
+NODE_DIR="$HERMES_DIR/node"
+BIN_DIR="$HERMES_DIR/bin"
 NODE_VERSION="22.22.0"
 GLIBC_LDSO="$PREFIX/glibc/lib/ld-linux-aarch64.so.1"
-MARKER="$OCA_DIR/.post-setup-done"
+MARKER="$HERMES_DIR/.post-setup-done"
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -32,7 +32,7 @@ YELLOW='\033[1;33m'
 NC='\033[0m'
 
 # ─── GitHub mirror fallback (for China/restricted networks) ──
-REPO_BASE_ORIGIN="https://raw.githubusercontent.com/AidanPark/openclaw-android/main"
+REPO_BASE_ORIGIN="https://raw.githubusercontent.com/crftsmnd/hermux/main"
 REPO_BASE="$REPO_BASE_ORIGIN"
 resolve_repo_base() {
     if curl -sI --connect-timeout 3 "$REPO_BASE_ORIGIN/oa.sh" >/dev/null 2>&1; then
@@ -291,7 +291,7 @@ else
 [ -n "\$LD_PRELOAD" ] && export _OA_ORIG_LD_PRELOAD="\$LD_PRELOAD"
 unset LD_PRELOAD
 export _OA_WRAPPER_PATH="$BIN_DIR/node"
-_OA_COMPAT="\$HOME/.openclaw-android/patches/glibc-compat.js"
+_OA_COMPAT="\$HOME/.hermes-android/patches/glibc-compat.js"
 if [ -f "\$_OA_COMPAT" ]; then
     case "\${NODE_OPTIONS:-}" in
         *"\$_OA_COMPAT"*) ;;
@@ -432,7 +432,7 @@ if command -v openclaw &>/dev/null 2>&1; then
 else
     # Clean npm cache tmp dir (leftover from previous failed installs)
     rm -rf "$HOME/.npm/_cacache/tmp" 2>/dev/null || true
-    npm install -g openclaw@latest --ignore-scripts 2>&1
+    npm install -g hermes-ai@latest --ignore-scripts 2>&1
     OC_VER=$(openclaw --version 2>/dev/null || echo "installed")
     echo -e "  ${GREEN}✓${NC} OpenClaw $OC_VER"
 fi

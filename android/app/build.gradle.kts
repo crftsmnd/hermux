@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.openclaw.android"
+    namespace = "com.hermes.android"
     compileSdk = 36
 
     dependenciesInfo {
@@ -16,7 +16,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.openclaw.android"
+        applicationId = "com.hermes.android"
         minSdk = 24
         //noinspection ExpiredTargetSdkVersion
         targetSdk = 28
@@ -34,12 +34,12 @@ android {
         buildConfigField(
             "String",
             "WWW_URL",
-            "\"https://github.com/AidanPark/openclaw-android-app/releases/download/v1.0.0/www.zip\"",
+            "\"https://github.com/crftsmnd/hermux/releases/latest/www.zip\"",
         )
         buildConfigField(
             "String",
             "CONFIG_URL",
-            "\"https://raw.githubusercontent.com/AidanPark/openclaw-android-app/main/config.json\"",
+            "\"https://raw.githubusercontent.com/crftsmnd/hermux/main/config.json\"",
         )
     }
 

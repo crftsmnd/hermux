@@ -352,7 +352,7 @@ exit ${d}_rc
     }
 
     private fun copyPostSetupScript(target: File) {
-        val url = "https://raw.githubusercontent.com/AidanPark/openclaw-android/main/post-setup.sh"
+        val url = "https://raw.githubusercontent.com/crftsmnd/hermux/main/post-setup.sh"
         try {
             java.net.URL(url).openStream().use { input ->
                 target.outputStream().use { output -> input.copyTo(output) }
@@ -444,7 +444,7 @@ exit ${d}_rc
 
     fun installOaCli() {
         val oaBin = File(prefixDir, "bin/oa")
-        val oaUrl = "https://raw.githubusercontent.com/AidanPark/openclaw-android/main/oa.sh"
+        val oaUrl = "https://raw.githubusercontent.com/crftsmnd/hermux/main/oa.sh"
         try {
             java.net.URL(oaUrl).openStream().use { input ->
                 oaBin.outputStream().use { output -> input.copyTo(output) }
