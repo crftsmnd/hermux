@@ -193,7 +193,7 @@ class JsBridge(
                 mapOf(
                     "id" to "hermes",
                     "name" to "Hermes",
-                    "icon" to "/hermes.svg",
+                    "icon" to "/openclaw.svg",
                     "desc" to "AI agent platform",
                 ),
             ),
